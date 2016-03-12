@@ -42,6 +42,12 @@ hist(dayData, main="Histogram of total number of steps taken each day", xlab="St
 ![](./PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 ```r
+barplot(dayData, main="Barplot of total number of steps taken each day", xlab="Day",ylab="Steps")
+```
+
+![](./PA1_template_files/figure-html/unnamed-chunk-2-2.png)<!-- -->
+
+```r
 ## the mean of the total number of steps taken per day 
 mean_step<-as.integer(mean(dayData))
 ## the median of the total number of steps taken per day 
@@ -67,7 +73,7 @@ plot(names(minuteData),minuteData,type="l",xlab="Five-minute interval", ylab="Av
 max_step<-max(minuteData)
 max_day<-names(which(minuteData==max_step))
 ```
-In the 835 five minute interval, on  average across all the days in the dataset, contains the maximum number of steps 206.1698113
+In the interval of 835, on  average across all the days in the dataset, contains the maximum number of steps 206.1698113
 
 
 ## Imputing missing values
@@ -110,6 +116,12 @@ hist(dayFillingData, main="Histogram of total number of steps taken each day", x
 ```
 
 ![](./PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+```r
+barplot(dayFillingData, main="Barplot of total number of steps taken each day", xlab="Day",ylab="Steps")
+```
+
+![](./PA1_template_files/figure-html/unnamed-chunk-5-2.png)<!-- -->
 
 ```r
 ## the mean of the total number of steps taken per day 

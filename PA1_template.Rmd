@@ -29,6 +29,7 @@ summary(rawData)
 ```{r, echo=TRUE}
 dayData<-tapply(rawData$steps, rawData$date, sum, na.rm=TRUE)
 hist(dayData, main="Histogram of total number of steps taken each day", xlab="Steps")
+barplot(dayData, main="Barplot of total number of steps taken each day", xlab="Day",ylab="Steps")
 ## the mean of the total number of steps taken per day 
 mean_step<-as.integer(mean(dayData))
 ## the median of the total number of steps taken per day 
@@ -48,7 +49,7 @@ plot(names(minuteData),minuteData,type="l",xlab="Five-minute interval", ylab="Av
 max_step<-max(minuteData)
 max_day<-names(which(minuteData==max_step))
 ```
-In the `r max_day` five minute interval, on  average across all the days in the dataset, contains the maximum number of steps `r max_step`
+In the interval of `r max_day`, on  average across all the days in the dataset, contains the maximum number of steps `r max_step`
 
 
 ## Imputing missing values
@@ -79,6 +80,7 @@ sum(is.na(fillingData))
 ## total number of steps taken each day after filling
 dayFillingData<-tapply(fillingData$steps, fillingData$date, sum)
 hist(dayFillingData, main="Histogram of total number of steps taken each day", xlab="Steps")
+barplot(dayFillingData, main="Barplot of total number of steps taken each day", xlab="Day",ylab="Steps")
 ## the mean of the total number of steps taken per day 
 mean_step_filling<-as.integer(mean(dayFillingData))
 ## the median of the total number of steps taken per day 
